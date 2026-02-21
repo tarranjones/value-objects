@@ -28,6 +28,15 @@ it('throws on an empty string', function (): void {
     new Domain('');
 })->throws(InvalidArgumentException::class);
 
+it('enforces hostname rules by default', function (): void {
+    new Domain('not_valid_hostname!');
+})->throws(InvalidArgumentException::class);
+
+it('skips hostname validation when isHostname is false', function (): void {
+    $domain = new Domain('example', isHostname: false);
+    expect($domain->value())->toBe('example');
+});
+
 it('compares two equal domains as equal', function (): void {
     $a = new Domain('example.com');
     $b = new Domain('example.com');

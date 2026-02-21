@@ -14,9 +14,10 @@ final readonly class Domain implements Stringable
     /**
      * @param array<string, mixed> $options
      */
-    public function __construct(string $value, int $flags = FILTER_FLAG_HOSTNAME, array $options = [])
+    public function __construct(string $value, bool $isHostname = true, array $options = [])
     {
         $trimmed = trim($value);
+        $flags = $isHostname ? FILTER_FLAG_HOSTNAME : 0;
         $filterOptions = $options !== [] ? [
             'flags' => $flags,
             'options' => $options,
