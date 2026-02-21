@@ -1,5 +1,9 @@
 /.claude/
 /.idea/
+/.cursor/
+/.windsurf/
+/.aider*
+/.continue/
 /vendor/
 /coverage/
 /.php-cs-fixer.cache
