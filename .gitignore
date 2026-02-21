@@ -1,0 +1,7 @@
+/.claude/
+/.idea/
+/vendor/
+/coverage/
+/.php-cs-fixer.cache
+/.phpunit.result.cache
+/phpstan-baseline.neon
